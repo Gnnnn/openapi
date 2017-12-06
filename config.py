@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*- 
-""" Created on Thu Nov 16 10:39:22 2017 @author: pub_Treasurysystem xiaokexiao """ 
+""" Created on Thu Nov 16 10:39:22 2017 @author: **** *** """ 
 import time
 
 #普惠测试环境数据库相关信息
-DatabaseInfo = {'DatabaseUrl':'215.128.17.106:2433' 
-                ,'UserName':'PHabsdbopr' 
-                ,'Password':'Hk123456' 
-                ,'Database':'DataInterface' 
+DatabaseInfo = {'DatabaseUrl':'****' 
+                ,'UserName':'****' 
+                ,'Password':'****' 
+                ,'Database':'****' 
                 ,'DatabaseInterfaceTable':'dbo.DataInterfaceTask'} 
 
 
