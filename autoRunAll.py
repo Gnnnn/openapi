@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 """
+<<<<<<< HEAD
 Created on Thu Nov 30 14:11:38 2017
 
 @author: xiaokexiao
+>>>>>>> d74b4a917e6f12e5a81196c1ef62a8cd287889fc
 """
 
 import threading 
@@ -12,6 +14,7 @@ import tools
 import time
 
 
+<<<<<<< HEAD
 #loops ????????????????????5????????1?30?????????2
 loops = [300,1800 ] 
   
@@ -36,6 +39,7 @@ def runQuery(nloop, nsec):
     
 
 def main(): 
+<<<<<<< HEAD
     #????????
     while 1 == 1:
         threads = [] 
