@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*- 
-""" Created on Thu Nov 16 10:39:07 2017 @author: pub_Treasurysystem xiaokexiao """ 
+""" Created on Thu Nov 16 10:39:07 2017 @author: *** **** """ 
 
 import config 
 import openapi 
