@@ -169,7 +169,7 @@ def successUpdate(TaskStartTime,TaskEndTime,TaskId):
 #任务处理失败，更新task表状态为 TaskState = 3,TaskStartTime = TaskStartTime,TaskEndTime = TaskEndTime
 def failUpdate(TaskStartTime,TaskEndTime,errorInfo,TaskId):
     sql = 'update '+ config.DatabaseInfo['DatabaseInterfaceTable'] + ' set TaskState = 3,TaskStartTime = ' + TaskStartTime + ',TaskEndTime = '+ TaskEndTime + ",ErrorInfo = N'" + errorInfo + "' where TaskId = " + str(TaskId) 
-    sql= sql.encode('unicode-escape') 
+    sql= sql.encode('utf-8') 
     databasesql(sql) 
     return 
 
