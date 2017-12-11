@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 """
+<<<<<<< HEAD:Script/queryPayResult.py
 Created on Thu Nov 30 14:11:38 ****
+=======
+
+Created on Wed Nov 29 13:34:01 ****
+>>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:queryPayResult.py
 
 @author: Gn
 """

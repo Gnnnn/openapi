@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*- 
+<<<<<<< HEAD:Script/openapi.py
 """
 Created on Thu Nov 30 14:11:38 ****
 
 @author: Gn
 """
+=======
+""" Created on Thu Nov 16 10:39:30 2017 @author: *** """ 
+>>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:openapi.py
 
 import config 
 import tools 
@@ -65,4 +69,3 @@ def getAssetsAdjust(assetsBagNo,sourceSystem,adjustFlag,adjustNumber,updatedBy,a
     r = requests.get(url,headers=headers)
     re,data = tools.strtojson(r.text)
     tools.log(re,'info') 
-    return re,data

@@ -1,0 +1,50 @@
+2017-12-06-queryMsg.log
+
+
+[2017-12-06 00:16:41,351] [tools.py:147] [WARNING] queryPayResult Start--
+[2017-12-06 00:16:41,365] [tools.py:145] [INFO] access_token : 5AD290E73A7041D38BAE44D57F0BB978
+[2017-12-06 00:16:41,365] [tools.py:145] [INFO] queryPayResult
+[2017-12-06 00:16:41,881] [tools.py:145] [INFO] paymentIds:
+[2017-12-06 00:16:41,881] [tools.py:145] [INFO] http://esg-open-stg.paic.com.cn/open/appsvr/assets/queryPayResult/?access_token=5AD290E73A7041D38BAE44D57F0BB978&request_id=1512490601&paymentIdList=
+[2017-12-06 00:16:41,928] [tools.py:145] [INFO] {u'msg': u'', u'data': u"{'status':'0'}", u'requestId': u'1512490601', u'ret': u'0'}
+[2017-12-06 00:16:41,928] [tools.py:149] [ERROR] 未完成
+[2017-12-06 00:16:41,928] [tools.py:145] [INFO] 0 success(es),1 fail(s)
+[2017-12-06 00:16:41,928] [tools.py:147] [WARNING] queryPayResult End--
+
+
+
+2017-12-05-taskMsg.log
+
+[2017-12-05 15:10:11,986] [tools.py:130] [WARNING] DataInterfaceTask Start--
+[2017-12-05 15:10:12,019] [tools.py:128] [INFO] TaskIds : [['8', 'ABSPresale'], ['18', 'ABSPresale'], ['19', 'ABSPresale'], ['23', 'ABSPresale'], ['24', 'ABSPresale']]
+[2017-12-05 15:10:12,081] [tools.py:128] [INFO] TaskId : 8
+[2017-12-05 15:10:12,081] [tools.py:128] [INFO] TaskFunc : assetsAdjust
+[2017-12-05 15:10:12,128] [tools.py:128] [INFO] http://esg-open-stg.paic.com.cn/open/appsvr/assets/assetsAdjust/?access_token=5AD290E73A7041D38BAE44D57F0BB978&request_id=1512457812&assetsBagNo=000002&sourceSystem=2&addNumber=1&delNumber=0&updatedBy=system
+[2017-12-05 15:10:12,206] [tools.py:128] [INFO] {u'msg': u'', u'data': u"{'message':'\u64cd\u4f5c\u6210\u529f\uff01','status':'0'}", u'requestId': u'1512457812', u'ret': u'0'}
+[2017-12-05 15:10:12,221] [tools.py:128] [INFO] 操作成功
+[2017-12-05 15:10:12,221] [tools.py:128] [INFO] 1 success(es),0 fail(s)
+[2017-12-05 15:10:12,221] [tools.py:128] [INFO] TaskId : 18
+[2017-12-05 15:10:12,236] [tools.py:128] [INFO] TaskFunc : assetsAdjust
+[2017-12-05 15:10:12,269] [tools.py:128] [INFO] http://esg-open-stg.paic.com.cn/open/appsvr/assets/assetsAdjust/?access_token=5AD290E73A7041D38BAE44D57F0BB978&request_id=1512457812&assetsBagNo=000001&sourceSystem=2&addNumber=1&delNumber=0&updatedBy=system
+[2017-12-05 15:10:12,378] [tools.py:128] [INFO] {u'msg': u'', u'data': u"{'message':'\u64cd\u4f5c\u6210\u529f\uff01','status':'0'}", u'requestId': u'1512457812', u'ret': u'0'}
+[2017-12-05 15:10:12,394] [tools.py:128] [INFO] 操作成功
+[2017-12-05 15:10:12,394] [tools.py:128] [INFO] 1 success(es),0 fail(s)
+[2017-12-05 15:10:12,394] [tools.py:128] [INFO] TaskId : 19
+[2017-12-05 15:10:12,408] [tools.py:128] [INFO] TaskFunc : assetsAdjust
+[2017-12-05 15:10:12,440] [tools.py:128] [INFO] http://esg-open-stg.paic.com.cn/open/appsvr/assets/assetsAdjust/?access_token=5AD290E73A7041D38BAE44D57F0BB978&request_id=1512457812&assetsBagNo=000001&sourceSystem=2&addNumber=0&delNumber=1&updatedBy=system
+[2017-12-05 15:10:12,519] [tools.py:128] [INFO] {u'msg': u'', u'data': u"{'message':'\u64cd\u4f5c\u6210\u529f\uff01','status':'0'}", u'requestId': u'1512457812', u'ret': u'0'}
+[2017-12-05 15:10:12,533] [tools.py:128] [INFO] 操作成功
+[2017-12-05 15:10:12,533] [tools.py:128] [INFO] 1 success(es),0 fail(s)
+[2017-12-05 15:10:12,533] [tools.py:128] [INFO] TaskId : 23
+[2017-12-05 15:10:12,549] [tools.py:128] [INFO] TaskFunc : assetsAdjust
+[2017-12-05 15:10:12,581] [tools.py:128] [INFO] http://esg-open-stg.paic.com.cn/open/appsvr/assets/assetsAdjust/?access_token=5AD290E73A7041D38BAE44D57F0BB978&request_id=1512457812&assetsBagNo=100&sourceSystem=1&addNumber=1&delNumber=0&updatedBy=system
+[2017-12-05 15:10:12,611] [tools.py:128] [INFO] {u'msg': u'', u'data': u"{'message':'\u64cd\u4f5c\u6210\u529f\uff01','status':'0'}", u'requestId': u'1512457812', u'ret': u'0'}
+[2017-12-05 15:10:12,644] [tools.py:128] [INFO] 操作成功
+[2017-12-05 15:10:12,644] [tools.py:128] [INFO] 1 success(es),0 fail(s)
+[2017-12-05 15:10:12,644] [tools.py:128] [INFO] TaskId : 24
+[2017-12-05 15:10:12,658] [tools.py:128] [INFO] TaskFunc : assetsAdjust
+[2017-12-05 15:10:12,706] [tools.py:128] [INFO] http://esg-open-stg.paic.com.cn/open/appsvr/assets/assetsAdjust/?access_token=5AD290E73A7041D38BAE44D57F0BB978&request_id=1512457812&assetsBagNo=100&sourceSystem=1&addNumber=0&delNumber=1&updatedBy=system
+[2017-12-05 15:10:12,736] [tools.py:128] [INFO] {u'msg': u'', u'data': u"{'message':'\u64cd\u4f5c\u6210\u529f\uff01','status':'0'}", u'requestId': u'1512457812', u'ret': u'0'}
+[2017-12-05 15:10:12,753] [tools.py:128] [INFO] 操作成功
+[2017-12-05 15:10:12,753] [tools.py:128] [INFO] 1 success(es),0 fail(s)
+[2017-12-05 15:10:12,799] [tools.py:130] [WARNING] DataInterfaceTask End--

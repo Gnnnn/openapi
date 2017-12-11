@@ -2,7 +2,11 @@
 """
 Created on Thu Nov 30 14:11:38 ****
 
+<<<<<<< HEAD:Script/autoRunAll.py
 @author: Gn
+=======
+@author: ****
+>>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:autoRunAll.py
 """
 
 import threading 
@@ -12,6 +16,7 @@ import tools
 import time
 
 
+<<<<<<< HEAD:Script/autoRunAll.py
 <<<<<<< HEAD
 =======
 #loops 字典代表了两个函数的运行频率，例如此时为5分钟运行一次函数1，30分钟秒运行一次函数2
@@ -38,8 +43,12 @@ def runQuery(nloop, nsec):
     
 
 def main(): 
+<<<<<<< HEAD:Script/autoRunAll.py
 
     #这是一个无限循环
+=======
+    #无限循环
+>>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:autoRunAll.py
     while 1 == 1:
         threads = [] 
         nloops = range(len(loops)) 

@@ -1,17 +1,23 @@
 # -*- coding: utf-8 -*- 
+<<<<<<< HEAD:Script/config.py
 """
 Created on Thu Nov 30 14:11:38 ****
 
 @author: Gn
 """
+=======
+""" Created on Thu Nov 16 10:39:22 2017 @author: **** *** """ 
+>>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:config.py
 import time
 
 #普惠测试环境数据库相关信息
 DatabaseInfo = {'DatabaseUrl':'****' 
+<<<<<<< HEAD:Script/config.py
                 ,'UserName':'**' 
                 ,'Password':'**' 
                 ,'Database':'**' 
                 ,'DatabaseInterfaceTable':'*.**'} 
+>>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:config.py
 
 
 
@@ -43,4 +49,3 @@ querylogfile = 'E:\\openapi\\log\\' + str(queryFileName)
 logfile = 'E:\\openapi\\log\\' + str(logFileName)
 
 #资产正式卖出接口的字段，此处与sql[assetsSold]必须是一一对应关系
-assetsSold = {'ASSETS_BAG_NO':'' ,'PRODUCT_TYPE':'' ,'DATA_SOURCE':'' ,'FINISH_BY':'' ,'FINISH_DATE':''}

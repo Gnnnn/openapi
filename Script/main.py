@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*- 
+<<<<<<< HEAD:Script/main.py
 """
 Created on Thu Nov 30 14:11:38 ****
 
 @author: Gn
 """
+=======
+""" Created on Thu Nov 16 10:39:07 2017 @author: *** **** """ 
+>>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:main.py
 
 import config 
 import openapi 
@@ -298,4 +302,3 @@ def passTask(access_token,requestId,TaskId):
 #     while 1 == 1:
 #         time.sleep(sleeptime)
 #         queryPayResult(access_token,requestId)
-# =============================================================================

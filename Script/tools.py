@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*- 
+<<<<<<< HEAD:Script/tools.py
 """
 Created on Thu Nov 30 14:11:38 ****
+=======
+""" Created on Thu Nov 16 10:48:45 **** @author: **** **** """ 
+>>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:tools.py
 
 @author: Gn
 """
@@ -172,7 +176,6 @@ def successUpdate(TaskStartTime,TaskEndTime,TaskId):
 #任务处理失败，更新task表状态为 TaskState = 3,TaskStartTime = TaskStartTime,TaskEndTime = TaskEndTime
 def failUpdate(TaskStartTime,TaskEndTime,errorInfo,TaskId):
     sql = 'update '+ config.DatabaseInfo['DatabaseInterfaceTable'] + ' set TaskState = 3,TaskStartTime = ' + TaskStartTime + ',TaskEndTime = '+ TaskEndTime + ",ErrorInfo = N'" + errorInfo + "' where TaskId = " + str(TaskId) 
-    sql= sql.encode('unicode-escape') 
     databasesql(sql) 
     return 
 
@@ -196,4 +199,3 @@ def strtojson(r):
         #data = str(re['data'])
         data = data.replace("'","\"")
         data = json.loads(data)
-        return re,data
