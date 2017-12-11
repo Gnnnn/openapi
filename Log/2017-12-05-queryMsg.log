@@ -1,0 +1,9 @@
+[2017-12-06 00:16:41,351] [WARNING] queryPayResult Start--
+[2017-12-06 00:16:41,365] [INFO] access_token : 5AD290E73A7041D38BAE44D57F0BB978
+[2017-12-06 00:16:41,365] [INFO] queryPayResult
+[2017-12-06 00:16:41,881] [INFO] paymentIds:
+[2017-12-06 00:16:41,881] [INFO] http://****/open/appsvr/assets/queryPayResult/?access_token=5AD290E73A7041D38BAE44D57F0BB978&request_id=1512490601&paymentIdList=
+[2017-12-06 00:16:41,928] [INFO] {u'msg': u'', u'data': u"{'status':'0'}", u'requestId': u'1512490601', u'ret': u'0'}
+[2017-12-06 00:16:41,928] [tools.py:149] [ERROR] 无数据
+[2017-12-06 00:16:41,928] [INFO] 0 success(es),1 fail(s)
+[2017-12-06 00:16:41,928] [WARNING] queryPayResult End--

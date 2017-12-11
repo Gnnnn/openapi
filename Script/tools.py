@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*- 
-""" Created on Thu Nov 16 10:48:45 2017 @author: pub_Treasurysystem xiaokexiao """ 
+"""
+Created on Thu Nov 30 14:11:38 ****
 
+@author: Gn
+"""
 import config 
 import pymssql 
 import json

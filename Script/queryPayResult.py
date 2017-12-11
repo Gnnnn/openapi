@@ -1,14 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-<<<<<<< HEAD
-Created on Wed Nov 29 13:34:01 2017
-
-@author: xiaokexiao
-=======
-Created on Wed Nov 29 13:34:01 ****
+Created on Thu Nov 30 14:11:38 ****
 
 @author: Gn
->>>>>>> d74b4a917e6f12e5a81196c1ef62a8cd287889fc
 """
 
 import openapi 
