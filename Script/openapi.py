@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
 
-" Created on Thu Nov 16 10:39:30 2017 @author: pub_Treasurysystem xiaokexiao " 
+" Created on Thu Nov 16 10:39:30 * @author: * * " 
 
 import config 
 import tools 

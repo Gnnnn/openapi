@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*- 
-""" Created on Thu Nov 16 10:39:22 2017 @author: pub_Treasurysystem xiaokexiao """ 
+""" Created on Thu Nov 16 10:39:22 * @author: * * """ 
 import time
 
-#普惠测试环境数据库相关信息
-DatabaseInfo = {'DatabaseUrl':'215.128.17.106:2433' 
-                ,'UserName':'PHabsdbopr' 
-                ,'Password':'Hk123456' 
-                ,'Database':'DataInterface' 
+#测试环境数据库相关信息
+DatabaseInfo = {'DatabaseUrl':'**' 
+                ,'UserName':'*' 
+                ,'Password':'*' 
+                ,'Database':'*' 
                 ,'DatabaseInterfaceTable':'dbo.DataInterfaceTask'} 
 
 
@@ -22,11 +22,11 @@ sql = {'assetsPlanPay':'paymentId, trustCode,paymentAmount,payDate,receiverAccou
 
 
 #普惠Openapi的url
-url = {'getToken':'http://esg-oauth-stg.paic.com.cn/oauth/oauth2/access_token?client_id=P_PH_ABS_SERVICE&grant_type=client_credentials&client_secret= hgr563Ai' 
-       ,'getQueryPayResult':'http://esg-open-stg.paic.com.cn/open/appsvr/assets/queryPayResult/' 
-       ,'getAssetsSold':'http://esg-open-stg.paic.com.cn/open/appsvr/assets/assetsSold/' 
-       ,'getAssetsPlanPay':'http://esg-open-stg.paic.com.cn/open/appsvr/assets/assetsPlanPay/' 
-       ,'getAssetsAdjust':'http://esg-open-stg.paic.com.cn/open/appsvr/assets/assetsAdjust/'} 
+url = {'getToken':'*' 
+       ,'getQueryPayResult':'*' 
+       ,'getAssetsSold':'*' 
+       ,'getAssetsPlanPay':'*' 
+       ,'getAssetsAdjust':'*'} 
 
 
 #log文件的文件名
