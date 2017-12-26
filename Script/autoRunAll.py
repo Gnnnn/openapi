@@ -1,26 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov 30 14:11:38 ****
+Created on Thu Nov 30 14:11:38 2017
 
-<<<<<<< HEAD:Script/autoRunAll.py
-@author: Gn
-=======
-@author: ****
->>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:autoRunAll.py
+@author: xiaokexiao
 """
 
 import threading 
 import task
+import queryPayResult
 import openapi
 import tools
 import time
 
 
-<<<<<<< HEAD:Script/autoRunAll.py
-<<<<<<< HEAD
-=======
-#loops 字典代表了两个函数的运行频率，例如此时为5分钟运行一次函数1，30分钟秒运行一次函数2
-#loops 字典代表了两个函数的运行频率，例如第一个函数每隔5分钟跑一次，第二个每隔30分钟跑一次
+#loops ????????????????????5????????1?30?????????2
 loops = [300,1800 ] 
   
 def runTask(nloop, nsec): 
@@ -38,18 +31,13 @@ def runQuery(nloop, nsec):
     access_token = openapi.getToken() 
     requestId = str(int(time.time())) 
     
-    main.queryPayResult(access_token,requestId)
+    queryPayResult.queryPayResult(access_token,requestId)
     tools.log("queryPayResult End--",'warn')
     time.sleep(nsec) 
     
 
 def main(): 
-<<<<<<< HEAD:Script/autoRunAll.py
-
-    #这是一个无限循环
-=======
-    #无限循环
->>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:autoRunAll.py
+    #????????
     while 1 == 1:
         threads = [] 
         nloops = range(len(loops)) 
