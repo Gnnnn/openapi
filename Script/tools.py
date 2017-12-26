@@ -1,32 +1,29 @@
 # -*- coding: utf-8 -*- 
-<<<<<<< HEAD:Script/tools.py
-"""
-Created on Thu Nov 30 14:11:38 ****
-=======
-""" Created on Thu Nov 16 10:48:45 **** @author: **** **** """ 
->>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:tools.py
-
-@author: Gn
-"""
-import config 
-import pymssql 
+" Created on Thu Nov 16 10:48:45 2017 @author: pub_Treasurysystem xiaokexiao " 
+import config
+import pymssql
 import json
-import logging 
-import logging.handlers 
+import logging
+import logging.handlers
+import time
 
+#global conn
+#conn = pymssql.connect(config.DatabaseInfo['DatabaseUrl'],config.DatabaseInfo['UserName'],config.DatabaseInfo['Password'],config.DatabaseInfo['Database'],charset="UTF-8") 
 
 #连接数据库-查询
-def database(sql): 
-    conn = pymssql.connect(config.DatabaseInfo['DatabaseUrl'],config.DatabaseInfo['UserName'],config.DatabaseInfo['Password'],config.DatabaseInfo['Database']) 
+def database(conn,sql):
+    #conn = pymssql.connect(config.DatabaseInfo['DatabaseUrl'],config.DatabaseInfo['UserName'],config.DatabaseInfo['Password'],config.DatabaseInfo['Database']) ,
+    #conn = pymssql.connect(config.DatabaseInfo['DatabaseUrl'],config.DatabaseInfo['UserName'],config.DatabaseInfo['Password'],config.DatabaseInfo['Database'],charset="UTF-8") 
     cursor = conn.cursor() 
     if not cursor: 
         raise Exception('数据库连接失败！') 
     cursor.execute(sql) 
     results = cursor.fetchall() 
     cursor.close() 
-    conn.close() 
+    #conn.close() 
     i = 0 
     datas = [] 
+    print results
     while i < len(results): 
         i = i+1 
         result = results[i-1] 
@@ -37,25 +34,26 @@ def database(sql):
 
 
 #连接数据库-增删改
-def databasesql(sql): 
-    conn = pymssql.connect(config.DatabaseInfo['DatabaseUrl'],config.DatabaseInfo['UserName'],config.DatabaseInfo['Password'],config.DatabaseInfo['Database']) 
+def databasesql(conn,sql):
+    #conn = pymssql.connect(config.DatabaseInfo['DatabaseUrl'],config.DatabaseInfo['UserName'],config.DatabaseInfo['Password'],config.DatabaseInfo['Database']) ,
+    #conn = pymssql.connect(config.DatabaseInfo['DatabaseUrl'],config.DatabaseInfo['UserName'],config.DatabaseInfo['Password'],config.DatabaseInfo['Database'],charset="UTF-8") 
     cursor = conn.cursor() 
     if not cursor: 
         raise Exception('数据库连接失败！') 
     cursor.execute(sql) 
     conn.commit() 
     cursor.close() 
-    conn.close() 
+    #conn.close() 
     return 
 
 
-#用于将sql查出的不同格式的数据格式化为[[str],[str],[str],[str]]
+#用于将sql查出的不同格式的数据格式化为[[str],[str],[str],[str]],
 def checkdata(data): 
     j = 0 
     datas = []    
     while j < len(data): 
-        if isinstance(data[j],unicode): 
-            items = data[j].encode('unicode-escape') 
+        if isinstance(data[j],unicode):
+            items = data[j].encode('unicode-escape')
             datas.append(items) 
             j += 1 
         elif isinstance(data[j],(float,bool)) or data[j] is None: 
@@ -159,43 +157,46 @@ def querylog(msg,typeName):
     return msg
 
 
+
 #任务开始处理，更新task表状态为 TaskState = 1,TaskStartTime = TaskStartTime
-def taskStartUpdate(TaskStartTime,TaskId):
-    sql = 'update '+ config.DatabaseInfo['DatabaseInterfaceTable'] + ' set TaskState = 1,TaskStartTime = ' + TaskStartTime +' where TaskId = ' + str(TaskId) 
-    databasesql(sql)
+def taskStartUpdate(TaskStartTime,TaskId,conn):
+    sql = 'update '+ config.DatabaseInfo['DatabaseInterfaceTable'] + ' set TaskState = 1,TaskStartTime = ' + TaskStartTime +' where TaskId = ' + str(TaskId)
+    databasesql(conn,sql)
     return 
 
 
 #任务处理成功，更新task表状态为 TaskState = 2,TaskStartTime = TaskStartTime,TaskEndTime = TaskEndTime
-def successUpdate(TaskStartTime,TaskEndTime,TaskId):
+def successUpdate(TaskStartTime,TaskEndTime,TaskId,conn):
     sql = 'update '+ config.DatabaseInfo['DatabaseInterfaceTable'] + ' set TaskState = 2,TaskStartTime = ' + TaskStartTime+ ',TaskEndTime = '+ TaskEndTime + ' where TaskId = ' + str(TaskId)
-    databasesql(sql)
+    databasesql(conn,sql)
     return 
 
 
 #任务处理失败，更新task表状态为 TaskState = 3,TaskStartTime = TaskStartTime,TaskEndTime = TaskEndTime
-def failUpdate(TaskStartTime,TaskEndTime,errorInfo,TaskId):
-    sql = 'update '+ config.DatabaseInfo['DatabaseInterfaceTable'] + ' set TaskState = 3,TaskStartTime = ' + TaskStartTime + ',TaskEndTime = '+ TaskEndTime + ",ErrorInfo = N'" + errorInfo + "' where TaskId = " + str(TaskId) 
-    databasesql(sql) 
+def failUpdate(TaskStartTime,TaskEndTime,errorInfo,TaskId,conn):
+    errorInfo = str(time.strftime("%Y-%m-%d %X", time.localtime())) + ':' +errorInfo
+    sql = 'update '+ config.DatabaseInfo['DatabaseInterfaceTable'] + ' set TaskState = 3,TaskStartTime = ' + TaskStartTime + ',TaskEndTime = '+ TaskEndTime + ",ErrorInfo = N'" + errorInfo + "' where TaskId = " + str(TaskId) ,
+    sql= sql.encode('utf-8') 
+    databasesql(conn,sql)
     return 
 
-#返回时间
-def sleeptime(hour,min,sec):
-    return hour*3600 + min*60 + sec;
 
-def strtojson(r):
-    dataStart = r.find("{",1)
-    dataEnd = r.find("}",-1)
-    if dataStart == -1:
-        re = json.loads(r)
-        data = {u'status':u'',u'message':u''}
-        return re,data
+
+#跳过任务，更新task表状态为 TaskState = 4,TaskStartTime = TaskStartTime,TaskEndTime = TaskEndTime
+def passUpdate(TaskStartTime,TaskId,conn):
+    TaskEndTime = TaskStartTime
+    sql = 'update '+ config.DatabaseInfo['DatabaseInterfaceTable'] + ' set TaskState = 4,TaskStartTime = ' + TaskStartTime + ',TaskEndTime = '+ TaskEndTime + " where TaskId = " + str(TaskId) 
+    sql= sql.encode('utf-8') 
+    databasesql(conn,sql)
+    return 
+
+
+#任务对应的表没有数据，更新task表状态为 TaskState = 5,TaskStartTime = TaskStartTime,TaskEndTime = TaskEndTime，errorInfo = there is no data!
+def noDataUpdate(TaskStartTime,errorInfo,TaskId,conn):
+    TaskEndTime = TaskStartTime
+    errorInfo = str(time.strftime("%Y-%m-%d %X", time.localtime())) + ':' + errorInfo
+    sql = 'update '+ config.DatabaseInfo['DatabaseInterfaceTable'] + ' set TaskState = 5,TaskStartTime = ' + TaskStartTime + ',TaskEndTime = '+ TaskEndTime + ",ErrorInfo = N'" + errorInfo + "' where TaskId = " + str(TaskId) 
+    sql= sql.encode('utf-8') 
+    databasesql(conn,sql)
+    return
     
-    else:
-        data = r[dataStart:dataEnd-1]
-        rightdata = data.replace("\"","'")
-        rightjson = r.replace(data,rightdata)
-        re = json.loads(rightjson)
-        #data = str(re['data'])
-        data = data.replace("'","\"")
-        data = json.loads(data)

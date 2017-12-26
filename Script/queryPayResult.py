@@ -1,26 +1,26 @@
 # -*- coding: utf-8 -*-
 """
-<<<<<<< HEAD:Script/queryPayResult.py
-Created on Thu Nov 30 14:11:38 ****
-=======
+Created on Wed Nov 29 13:34:01 2017
 
-Created on Wed Nov 29 13:34:01 ****
->>>>>>> 6d016066d07e0a58c7a778636273b2e278395dab:queryPayResult.py
-
-@author: Gn
+@author: PHABSOPRSTG
 """
 
 import openapi 
 import time 
 import main    
 import tools
+import config
+import pymssql
         
         
 if __name__ == '__main__': 
     tools.querylog("queryPayResult Start--",'warn')
+    global conn
+    conn = pymssql.connect(config.DatabaseInfo['DatabaseUrl'],config.DatabaseInfo['UserName'],config.DatabaseInfo['Password'],config.DatabaseInfo['Database'],charset="UTF-8") 
     access_token = openapi.getToken() 
     tools.querylog("access_token : " + access_token,'info') 
     requestId = str(int(time.time())) 
     
-    main.queryPayResult(access_token,requestId)
+    main.queryPayResult(access_token,requestId,conn)
+    conn.close()
     tools.querylog("queryPayResult End--",'warn')
